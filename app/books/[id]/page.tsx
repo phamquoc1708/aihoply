@@ -1,13 +1,15 @@
 import Chat from '@/components/Chat';
+import { NextRequest } from 'next/server';
 import React from 'react';
 
 const getData = async (id) => {
-    const api = await import('../../api/book/route')
+  const rs = await import('../../api/book/route')
+  const respone = await (await rs.GET({url: id} as NextRequest)).json();
+  // const rs = await fetch(`/api/book`, {method: 'GET', body: JSON.stringify(id)});
+  // const respone = await rs.json();
 
-    const respone = await (await api.GET(id as string)).json();
-
-    return respone.data;
-  };
+  return respone.data;
+};
 
 const Books = async ({ params }) => {
     const { id } = params;
