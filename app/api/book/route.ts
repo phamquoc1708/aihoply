@@ -17,7 +17,7 @@ export async function GET() {
 }
 
 
-export async function GET_DETAIL(id: string) {
+export async function POST(id: string) {
   await connectDB();
 
   const books = await BookModel.findOne({_id: new mongoose.Types.ObjectId(id)});

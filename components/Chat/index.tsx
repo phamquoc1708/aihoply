@@ -64,7 +64,7 @@ export default function Chat({idBook}) {
       </div>
       { /* consider removing this button from the UI once the embeddings are created ... */}
       <button
-        className='w-full mt-2 bg-red-500 text-white rounded-xl py-2 mb-6'
+        className='w-full mt-2 bg-red-500 text-white rounded-xl py-2 mb-20'
         onClick={createIndexAndEmbeddings}>Create index and embeddings</button>
     </div>
   );
