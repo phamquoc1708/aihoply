@@ -6,18 +6,7 @@ import { TextLoader } from "langchain/document_loaders/fs/text";
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 
-export async function GET() {
-  await connectDB();
-
-  const books = await BookModel.find({})
-
-  return NextResponse.json({
-    data: books,
-  });
-}
-
-
-export async function POST(id: string) {
+export async function GET(id: string) {
   await connectDB();
 
   const books = await BookModel.findOne({_id: new mongoose.Types.ObjectId(id)});

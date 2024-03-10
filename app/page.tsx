@@ -2,7 +2,7 @@ import React from 'react';
 import {Book} from '../components/index';
 
 const getData = async () => {
-  const rs = await import('./api/book/route')
+  const rs = await import('./api/books/route')
   const json = await (await rs.GET()).json();
 
   return json.data;

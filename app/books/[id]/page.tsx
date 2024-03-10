@@ -4,7 +4,7 @@ import React from 'react';
 const getData = async (id) => {
     const api = await import('../../api/book/route')
 
-    const respone = await (await api.POST(id as string)).json();
+    const respone = await (await api.GET(id as string)).json();
 
     return respone.data;
   };
